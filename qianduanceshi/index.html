@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYWIND</title>
+    <!-- 引入更现代的字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 添加浮动装饰元素 -->
+    <div class="floating-elements">
+        <div class="floating-element" style="top: 10%; left: 10%; width: 100px; height: 100px;"></div>
+        <div class="floating-element" style="top: 30%; right: 20%; width: 150px; height: 150px;"></div>
+        <div class="floating-element" style="bottom: 15%; left: 30%; width: 80px; height: 80px;"></div>
+        <div class="floating-element" style="bottom: 25%; right: 15%; width: 120px; height: 120px;"></div>
+    </div>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="logo-text">SKY</span>
+                <span class="logo-text accent">WIND</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-page="home">首页</a>
+                <a href="#" class="nav-link" data-page="chat">AI对话</a>
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 首页 -->
+        <section id="home" class="page active">
+            <!-- 英雄区域 -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="text-animate">探索</span>
+                        <span class="text-animate">创新</span>
+                        <span class="text-animate">未来</span>
+                    </h1>
+                    <p class="hero-subtitle">用科技连接梦想</p>
+                </div>
+            </div>
+
+            <!-- Swiper轮播图 -->
+            <div class="swiper-container">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/00177-456999852-No one,scenery,fog,clouds,mossy rocks,outdoor,sky,cloudy sky,landscape,nature,farce 5,scenery,nature,sky background,clouds in th_upscayl_4x_ultramix_balanced.png" alt="风景图片1" loading="lazy">
+                            <div class="slide-caption">云雾缭绕的自然风光</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/00255-658265267-scenery,no humans,mountain,landscape,fog,outdoors,cloud,river,tree,sky,nature,building,city,forest,_lora_tyuty5756-000001_1.5_,A.jpg" alt="风景图片2" loading="lazy">
+                            <div class="slide-caption">山川河流的壮丽景色</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/AE2.png" alt="风景图片3" loading="lazy">
+                            <div class="slide-caption">科技与自然的融合</div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+
+            <!-- 个人简介 -->
+            <div class="profile">
+                <div class="profile-content">
+                    <div class="avatar">
+                        <img src="img/nulle78553f0b2410eb.jpg" alt="个人头像" loading="lazy">
+                    </div>
+                    <div class="bio">
+                        <h2 class="section-title">关于我</h2>
+                        <p class="bio-text">这里是您的个人简介...</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link wechat">
+                            <i class="fab fa-weixin"></i>
+                            <img class="qr-code" src="path/to/wechat-qr.jpg" alt="微信二维码" loading="lazy">
+                        </a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI对话页面 -->
+        <section id="chat" class="page">
+            <div class="chat-container glass-effect">
+                <div class="chat-header">
+                    <h2><i class="fas fa-robot"></i> AI 助手</h2>
+                    <button class="clear-chat" title="清空对话">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div class="message-area" id="messageArea">
+                </div>
+                <div class="input-area">
+                    <textarea 
+                        id="chatInput" 
+                        placeholder="输入消息...(按Enter发送，Shift+Enter换行)" 
+                        class="chat-input"
+                    ></textarea>
+                    <button class="send-button" title="发送">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
